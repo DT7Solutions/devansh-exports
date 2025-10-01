@@ -59,7 +59,7 @@ const MachinerySection = () => {
     <section id="machinery" className="section-container bg-background">
       <div className="text-center mb-12 animate-fade-in">
         <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4">
-          State-of-the-Art Manufacturing
+          State-of-the-Art <span className="text-highlight">Manufacturing</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
           Our advanced machinery and expert craftsmanship ensure precision and quality in every stone we produce.

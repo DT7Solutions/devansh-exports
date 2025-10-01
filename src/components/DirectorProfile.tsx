@@ -4,11 +4,12 @@ const DirectorProfile = () => {
   return (
     <section id="director" className="section-container bg-muted/30">
       <div className="animate-fade-in">
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-12 text-center">Leadership</h2>
-
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Image Column */}
-          <div className="flex justify-center lg:justify-end">
+        <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4 text-center">
+          About <span className="text-highlight">Leadership</span>
+        </h2>
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          {/* Image Column - 4/12 */}
+          <div className="flex justify-center lg:col-span-4">
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-3xl opacity-50" />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-3xl opacity-50" />
@@ -20,8 +21,8 @@ const DirectorProfile = () => {
             </div>
           </div>
 
-          {/* Content Column */}
-          <div className="space-y-6">
+          {/* Content Column - 8/12 */}
+          <div className="lg:col-span-8 space-y-6">
             <div>
               <h3 className="font-display text-3xl font-bold text-secondary">Chandolu Manikanta</h3>
               <p className="text-lg text-primary font-semibold mt-2">Director, Devansh Exports</p>

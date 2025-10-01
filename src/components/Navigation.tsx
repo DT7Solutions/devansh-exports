@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import brochure from "@/assets/devansh-exports-brochure.pdf";
 import devanshLogo from "@/assets/devansh-logo.png";
 
 const Navigation = () => {
@@ -44,12 +45,8 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <div className="flex items-center cursor-pointer" onClick={() => scrollToSection("home")}>
-            <img 
-              src={devanshLogo} 
-              alt="Devansh Exports" 
-              className="h-14 w-auto object-contain"
-            />
+          <div className="flex items-center cursor-pointer rounded-md bg-white px-5 my-2" onClick={() => scrollToSection("home")}>
+            <img src={devanshLogo} alt="Devansh Exports" className="h-16 w-auto p object-contain logo rounded-md p-1"/>
           </div>
 
           {/* Desktop Navigation */}
@@ -69,18 +66,18 @@ const Navigation = () => {
 
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button 
-              variant="outline" 
-              size="lg" 
+            <Button
+              variant="outline"
+              size="lg"
               onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/brochure.pdf';
-                link.download = 'Devansh-Exports-Brochure.pdf';
+                const link = document.createElement("a");
+                link.href = brochure;
+                link.download = "devansh-exports-brochure.pdf";
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
               }}
-              className={isScrolled ? "" : "border-white text-white hover:bg-white hover:text-secondary"}
+              className={isScrolled ? "" : "border-white hover:bg-white hover:text-secondary"}
             >
               Download Brochure
             </Button>
