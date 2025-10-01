@@ -2,56 +2,80 @@ import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 
-// Granite Products: [name, imagePath]
+// Granite image imports
+import aspenWhite from "@/assets/products/granites/aspen-white.png";
+import azulNoveau from "@/assets/products/granites/azul-noveau.png";
+import blackForest from "@/assets/products/granites/black-forest.png";
+import blackGalaxy from "@/assets/products/granites/black-galaxy.png";
+import blackPearl from "@/assets/products/granites/black-pearl.png";
+import coffeeBrown from "@/assets/products/granites/coffee-brown.png";
+import dambullaWhite from "@/assets/products/granites/dambulla-white.png";
+import forestWhite from "@/assets/products/granites/forest-white.png";
+import kuppamWhite from "@/assets/products/granites/kuppam-white.png";
+import moonWhite from "@/assets/products/granites/moon-white.png";
+import orionWhite from "@/assets/products/granites/orion-white.png";
+import steelGrey from "@/assets/products/granites/steel-grey.png";
+import pradaGold from "@/assets/products/granites/prada-gold.png";
+import riverWhite from "@/assets/products/granites/river-white.png";
+import sapphireBlue from "@/assets/products/granites/sapphire-blue.png";
+import lapthora from "@/assets/products/granites/lapthora.png";
+
+// Quartz image imports
+import arcticWhite from "@/assets/products/quartzs/arctic-white.png";
+import calacuttaCosmos from "@/assets/products/quartzs/calacutta-cosmos.png";
+import calacuttaGrey from "@/assets/products/quartzs/calacutta-grey.png";
+import calacuttaMagnum from "@/assets/products/quartzs/calacutta-magnum.png";
+import calacuttaQuintess from "@/assets/products/quartzs/calacutta-quintess.png";
+import calacuttaUltra from "@/assets/products/quartzs/calacutta-ultra.png";
+import calacattaValentine from "@/assets/products/quartzs/calacatta-valentine.png";
+import carraraAurous from "@/assets/products/quartzs/carrara-aurous.png";
+import carraraGrey from "@/assets/products/quartzs/carrara-grey.png";
+import frostWhite from "@/assets/products/quartzs/frost-white.png";
+import greySpeckle from "@/assets/products/quartzs/grey-speckle.png";
+import icedWhite from "@/assets/products/quartzs/iced-white.png";
+import nexaSparklingWhite from "@/assets/products/quartzs/nexa-sparkling-white.png";
+import neoPureWhite from "@/assets/products/quartzs/neo-pure-white.png";
+
+// Granite Products: [name, image]
 const graniteProducts: [string, string][] = [
-  ["Aspen White", "/src/assets/products/granites/aspen-white.png"],
-  ["Azul Noveau", "/src/assets/products/granites/azul-noveau.png"],
-  ["Black Forest", "/src/assets/products/granites/black-forest.png"],
-  ["Black Galaxy", "/src/assets/products/granites/black-galaxy.png"],
-  ["Black Pearl", "/src/assets/products/granites/black-pearl.png"],
-  ["Coffee Brown", "/src/assets/products/granites/coffee-brown.png"],
-  ["Dambulla White", "/src/assets/products/granites/dambulla-white.png"],
-  ["Forest White", "/src/assets/products/granites/forest-white.png"],
-  ["Kuppam White", "/src/assets/products/granites/kuppam-white.png"],
-  ["Moon White", "/src/assets/products/granites/moon-white.png"],
-  ["Orion White", "/src/assets/products/granites/orion-white.png"],
-  ["Steel Grey", "/src/assets/products/granites/steel-grey.png"],
-  ["Prada Gold", "/src/assets/products/granites/prada-gold.png"],
-  ["River White", "/src/assets/products/granites/river-white.png"],
-  ["Sapphire Blue", "/src/assets/products/granites/sapphire-blue.png"],
-  ["Lapthora", "/src/assets/products/granites/lapthora.png"],
+  ["Aspen White", aspenWhite],
+  ["Azul Noveau", azulNoveau],
+  ["Black Forest", blackForest],
+  ["Black Galaxy", blackGalaxy],
+  ["Black Pearl", blackPearl],
+  ["Coffee Brown", coffeeBrown],
+  ["Dambulla White", dambullaWhite],
+  ["Forest White", forestWhite],
+  ["Kuppam White", kuppamWhite],
+  ["Moon White", moonWhite],
+  ["Orion White", orionWhite],
+  ["Steel Grey", steelGrey],
+  ["Prada Gold", pradaGold],
+  ["River White", riverWhite],
+  ["Sapphire Blue", sapphireBlue],
+  ["Lapthora", lapthora],
 ];
 
-// Quartz Products: [name, imagePath]
+// Quartz Products: [name, image]
 const quartzProducts: [string, string][] = [
-  ["Arctic White", "/src/assets/products/quartzs/arctic-white.png"],
-  ["Calacutta Cosmos", "/src/assets/products/quartzs/calacutta-cosmos.png"],
-  ["Calacutta Grey", "/src/assets/products/quartzs/calacutta-grey.png"],
-  ["Calacutta Magnum", "/src/assets/products/quartzs/calacutta-magnum.png"],
-  ["Calacutta Quintess", "/src/assets/products/quartzs/calacutta-quintess.png"],
-  ["Calacutta Ultra", "/src/assets/products/quartzs/calacutta-ultra.png"],
-  ["Calacatta Valentine", "/src/assets/products/quartzs/calacatta-valentine.png"],
-  ["Carrara Aurous", "/src/assets/products/quartzs/carrara-aurous.png"],
-  ["Carrara Grey", "/src/assets/products/quartzs/carrara-grey.png"],
-  ["Frost White", "/src/assets/products/quartzs/frost-white.png"],
-  ["Grey Speckle", "/src/assets/products/quartzs/grey-speckle.png"],
-  ["Iced White", "/src/assets/products/quartzs/iced-white.png"],
-  ["Nexa Sparkling White", "/src/assets/products/quartzs/nexa-sparkling-white.png"],
-  ["Neo Pure White", "/src/assets/products/quartzs/neo-pure-white.png"],
+  ["Arctic White", arcticWhite],
+  ["Calacutta Cosmos", calacuttaCosmos],
+  ["Calacutta Grey", calacuttaGrey],
+  ["Calacutta Magnum", calacuttaMagnum],
+  ["Calacutta Quintess", calacuttaQuintess],
+  ["Calacutta Ultra", calacuttaUltra],
+  ["Calacatta Valentine", calacattaValentine],
+  ["Carrara Aurous", carraraAurous],
+  ["Carrara Grey", carraraGrey],
+  ["Frost White", frostWhite],
+  ["Grey Speckle", greySpeckle],
+  ["Iced White", icedWhite],
+  ["Nexa Sparkling White", nexaSparklingWhite],
+  ["Neo Pure White", neoPureWhite],
 ];
 
 const ProductShowcase = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
-
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
-      window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-    }
-  };
 
   const ProductCard = ({ name, image }: { name: string; image: string }) => (
     <div className="group relative overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-all duration-300 h-64 cursor-pointer">
@@ -74,8 +98,7 @@ const ProductShowcase = () => {
           Our <span className="text-highlight">Premium Collection</span>
         </h2>
         <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Explore our extensive range of premium granite and quartz products, each carefully selected for quality and
-          beauty.
+          Explore our extensive range of premium granite and quartz products, each carefully selected for quality and beauty.
         </p>
       </div>
 
