@@ -1,4 +1,4 @@
-import { Linkedin, Instagram, MessageCircle } from "lucide-react";
+import { Linkedin, Instagram, MessageCircle, Phone, Mail, MapPin } from "lucide-react";
 import devanshLogo from "@/assets/devansh-logo.png";
 import footerBg from "@/assets/footer-bg.jpg";
 
@@ -69,8 +69,9 @@ const Footer = () => {
               </a>
             </div>
             <div className="space-y-2 text-sm text-white/70">
-              <p> <a href="mailto:sales@devanshexports.com" className="hover:underline"> sales@devanshexports.com </a> </p>
-              <p> <a href="tel:+917799884427" className="hover:underline"> +91 7799884427 </a> </p>
+              <p> <a href="mailto:sales@devanshexports.com" className="flex items-center gap-2 hover:underline"> <Mail className="w-4 h-4 text-white" /> sales@devanshexports.com </a> </p>
+              <p> <a href="tel:+917799884427" className="flex items-center gap-2 hover:underline"> <Phone className="w-4 h-4 text-white" /> +91 7799884427 </a> </p>
+              <p> <a href="https://maps.app.goo.gl/ZfyRgdWy2JPvAe9L7" className="flex items-start gap-2 hover:underline"> <MapPin className="w-6 h-6 text-white" /> 29-295, ground floor, kothapet, vinukonda. palnadu dist. AP - 522647 </a> </p>
             </div>
           </div>
         </div>

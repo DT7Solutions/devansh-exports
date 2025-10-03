@@ -51,7 +51,7 @@ const graniteProducts: [string, string][] = [
   ["Orion White", orionWhite],
   ["Steel Grey", steelGrey],
   ["Prada Gold", pradaGold],
-  ["River White", riverWhite],
+  ["River White", riverWhite],           
   ["Sapphire Blue", sapphireBlue],
   ["Lapthora", lapthora],
 ];

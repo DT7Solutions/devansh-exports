@@ -96,56 +96,34 @@ const ContactSection = () => {
         {/* Contact Information */}
         <div className="space-y-6 animate-slide-up">
           <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-              <MapPin className="w-5 h-5 text-primary" />
-            </div>
+            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <MapPin className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Address</h3>
-              <p className="text-sm text-muted-foreground">
-                Devansh Exports
-                <br />
-                Industrial Area, Andhra Pradesh
-                <br />
-                India
-              </p>
+              <p className="text-sm text-muted-foreground"> <a href="https://maps.app.goo.gl/ZfyRgdWy2JPvAe9L7" className="hover:underline" target="_blank" rel="noopener noreferrer"> Devansh Exports, 29-295, ground floor, kothapet, vinukonda. palnadu dist. AP - 522647. </a> </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-              <Phone className="w-5 h-5 text-primary" />
-            </div>
+            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Phone className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Phone</h3>
-              <p className="text-sm text-muted-foreground">+91 XXXXX XXXXX</p>
+              <p className="text-sm text-muted-foreground"> <a href="tel:+917799884427" className="hover:underline">+91 7799884427</a> </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-              <Mail className="w-5 h-5 text-primary" />
-            </div>
+            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Mail className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Email</h3>
-              <p className="text-sm text-muted-foreground">
-                sales@devanshexports.com
-                <br />
-                info@devanshexports.com
-              </p>
+              <p className="text-sm text-muted-foreground"> <a href="mailto:sales@devanshexports.com" className="hover:underline"> Sales@devanshexports.com </a> </p>
             </div>
           </div>
 
           <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
-            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
-              <Clock className="w-5 h-5 text-primary" />
-            </div>
+            <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Clock className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Business Hours</h3>
-              <p className="text-sm text-muted-foreground">
-                Monday - Saturday: 9:00 AM - 6:00 PM
-                <br />
-                Sunday: Closed
-              </p>
+              <p className="text-sm text-muted-foreground"> Monday - Friday: 10:00 AM - 7:00 PM <br /> Saturday & Sunday: Closed </p>
             </div>
           </div>
         </div>
@@ -154,121 +132,55 @@ const ContactSection = () => {
         <div className="lg:col-span-2 animate-fade-in">
           <div className="bg-white rounded-lg border border-border shadow-soft p-8">
             <h3 className="font-display text-2xl font-bold text-secondary mb-2">Send Your Enquiry</h3>
-            <p className="text-sm text-muted-foreground mb-6">
-              Share your requirements and we'll respond within 24-48 hours
-            </p>
-
+            <p className="text-sm text-muted-foreground mb-6"> Fill out the form below and we'll get back to you as soon as possible. </p>
             {showSuccess && (
               <div className="mb-6 p-4 bg-primary/10 border border-primary rounded-lg flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
-                <p className="text-sm text-secondary">
-                  Thank you! Your enquiry has been received. We'll contact you within 24-48 hours.
-                </p>
+                <p className="text-sm text-secondary"> Thank you! Your enquiry has been received. We'll contact you within 24-48 hours. </p>
               </div>
             )}
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-secondary mb-1.5">
-                  Full Name <span className="text-destructive">*</span>
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="Enter your name"
-                  className={errors.name ? "border-destructive" : ""}
-                />
+                <label htmlFor="name" className="block text-sm font-medium text-secondary mb-1.5"> Full Name <span className="text-destructive">*</span> </label>
+                <Input id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Enter your name" className={errors.name ? "border-destructive" : ""} />
                 {errors.name && <p className="text-xs text-destructive mt-1">{errors.name}</p>}
               </div>
-
               <div className="grid md:grid-cols-2 gap-5">
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-secondary mb-1.5">
-                    Email Address <span className="text-destructive">*</span>
-                  </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    placeholder="your@email.com"
-                    className={errors.email ? "border-destructive" : ""}
-                  />
+                  <label htmlFor="email" className="block text-sm font-medium text-secondary mb-1.5"> Email Address <span className="text-destructive">*</span> </label>
+                  <Input id="email" name="email" type="email" value={formData.email} onChange={handleChange} placeholder="your@email.com" className={errors.email ? "border-destructive" : ""} />
                   {errors.email && <p className="text-xs text-destructive mt-1">{errors.email}</p>}
                 </div>
-
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-secondary mb-1.5">
-                    Phone Number <span className="text-destructive">*</span>
-                  </label>
-                  <Input
-                    id="phone"
-                    name="phone"
-                    type="tel"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    placeholder="+91 XXXXX XXXXX"
-                    className={errors.phone ? "border-destructive" : ""}
-                  />
+                  <label htmlFor="phone" className="block text-sm font-medium text-secondary mb-1.5"> Phone Number <span className="text-destructive">*</span> </label>
+                  <Input id="phone" name="phone" type="tel" value={formData.phone} onChange={handleChange} placeholder="+91 XXXXX XXXXX" className={errors.phone ? "border-destructive" : ""} />
                   {errors.phone && <p className="text-xs text-destructive mt-1">{errors.phone}</p>}
                 </div>
               </div>
-
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-secondary mb-1.5">
-                  Company/Organization
-                </label>
-                <Input
-                  id="company"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Company name (optional)"
-                />
+              <div className="grid md:grid-cols-2 gap-5">
+                <div>
+                  <label htmlFor="company" className="block text-sm font-medium text-secondary mb-1.5"> Company/Organization </label>
+                  <Input id="company" name="company" value={formData.company} onChange={handleChange} placeholder="Company name (optional)" />
+                </div>
+                <div>
+                  <label htmlFor="productInterest" className="block text-sm font-medium text-secondary mb-1.5"> Product Interest </label>
+                  <select id="productInterest" name="productInterest" value={formData.productInterest} onChange={handleChange} className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2" >
+                    <option value="">Select Product Type</option>
+                    <option value="general">General Enquiry</option>
+                    <option value="granite">Granite Order</option>
+                    <option value="quartz">Quartz Order</option>
+                    <option value="custom">Custom Project</option>
+                    <option value="bulk">Bulk Order</option>
+                  </select>
+                </div>
               </div>
-
               <div>
-                <label htmlFor="productInterest" className="block text-sm font-medium text-secondary mb-1.5">
-                  Product Interest
-                </label>
-                <select
-                  id="productInterest"
-                  name="productInterest"
-                  value={formData.productInterest}
-                  onChange={handleChange}
-                  className="w-full h-10 px-3 rounded-md border border-input bg-background text-sm focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2"
-                >
-                  <option value="">Select Product Type</option>
-                  <option value="granite">Granite</option>
-                  <option value="quartz">Quartz</option>
-                  <option value="custom">Custom Project</option>
-                  <option value="bulk">Bulk Order</option>
-                  <option value="general">General Enquiry</option>
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-secondary mb-1.5">
-                  Message <span className="text-destructive">*</span>
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell us about your requirements..."
-                  rows={5}
-                  className={errors.message ? "border-destructive" : ""}
-                />
+                <label htmlFor="message" className="block text-sm font-medium text-secondary mb-1.5"> Message <span className="text-destructive">*</span> </label>
+                <Textarea id="message" name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your requirements..." rows={5} className={errors.message ? "border-destructive" : ""} />
                 {errors.message && <p className="text-xs text-destructive mt-1">{errors.message}</p>}
               </div>
-
-              <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}>
-                {isSubmitting ? "Sending..." : "Submit Enquiry"}
-              </Button>
+              <Button type="submit" variant="cta" size="lg" className="w-full" disabled={isSubmitting}> {isSubmitting ? "Sending..." : "Submit Enquiry"} </Button>
             </form>
           </div>
         </div>
