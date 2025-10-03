@@ -18,7 +18,7 @@ const Footer = () => {
       <div className="absolute inset-0 opacity-20">
         <img src={footerBg} alt="" className="w-full h-full object-cover" />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-5">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Identity */}
           <div>
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
 
         {/* Legal Bar */}
-        <div className="pt-8 border-t border-border/20 text-center">
+        <div className="pt-4 border-t border-border/20 text-center">
           <p className="text-sm text-white/70">
             Copyright 2025 © <span className="text-highlight">Devansh Exports</span> All Rights Reserved. | Website developed by{" "}
             <a href="https://dt7.agency" target="_blank" rel="noopener noreferrer" className="hover:underline text-highlight"> DT7Agency </a>
