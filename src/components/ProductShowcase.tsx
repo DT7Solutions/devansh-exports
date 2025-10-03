@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
+import sectionBg from "@/assets/products-bg.png";
 
 // Granite image imports
 import aspenwhite from "@/assets/products/granites/aspen-white.png";
@@ -94,38 +95,40 @@ const ProductShowcase = () => {
   );
 
   return (
-    <section id="products" className="section-container bg-muted/30">
-      <div className="text-center mb-12 animate-fade-in">
-        <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4">
-          Our <span className="text-highlight">Premium Collection</span>
-        </h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-          Explore our extensive range of premium granite and quartz products, each carefully selected for quality and beauty.
-        </p>
+    <section id="products" className="bg-muted/30" style={{ backgroundImage: `url(${sectionBg})`, backgroundSize: "cover", backgroundPosition: "center", }}>
+      <div className="section-container">
+        <div className="text-center mb-12 animate-fade-in">
+          <h2 className="font-display text-4xl md:text-5xl font-bold text-secondary mb-4">
+            Our <span className="text-highlight">Premium Collection</span>
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore our extensive range of premium granite and quartz products, each carefully selected for quality and beauty.
+          </p>
+        </div>
+
+        <Tabs defaultValue="granite" className="w-full animate-slide-up">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
+            <TabsTrigger value="granite">Granite Collection</TabsTrigger>
+            <TabsTrigger value="quartz">Quartz Collection</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="granite" className="animate-fade-in">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {graniteProducts.map(([name, image]) => (
+                <ProductCard key={name} name={name} image={image} />
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="quartz" className="animate-fade-in">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {quartzProducts.map(([name, image]) => (
+                <ProductCard key={name} name={name} image={image} />
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
-
-      <Tabs defaultValue="granite" className="w-full animate-slide-up">
-        <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-          <TabsTrigger value="granite">Granite Collection</TabsTrigger>
-          <TabsTrigger value="quartz">Quartz Collection</TabsTrigger>
-        </TabsList>
-
-        <TabsContent value="granite" className="animate-fade-in">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {graniteProducts.map(([name, image]) => (
-              <ProductCard key={name} name={name} image={image} />
-            ))}
-          </div>
-        </TabsContent>
-
-        <TabsContent value="quartz" className="animate-fade-in">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {quartzProducts.map(([name, image]) => (
-              <ProductCard key={name} name={name} image={image} />
-            ))}
-          </div>
-        </TabsContent>
-      </Tabs>
     </section>
   );
 };
