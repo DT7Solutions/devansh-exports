@@ -8,11 +8,7 @@ const AboutSection = () => {
       <div className="grid lg:grid-cols-2 gap-12 items-stretch">
         {/* Image Column */}
         <div className="order-2 lg:order-1 animate-fade-in flex">
-          <img
-            src={aboutImage}
-            alt="Devansh Exports Facility"
-            className="rounded-lg shadow-strong w-full h-full object-cover"
-          />
+          <img src={aboutImage} alt="Devansh Exports Facility" className="rounded-lg shadow-strong w-full h-full object-cover" />
         </div>
 
         {/* Content Column */}
@@ -36,7 +32,7 @@ const AboutSection = () => {
           <div className="grid gap-6">
             <Card className="border-l-4 border-l-primary shadow-soft hover:shadow-medium transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-wrap md:flex-nowrap items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10">
                     <Target className="w-6 h-6 text-primary" />
                   </div>
@@ -53,7 +49,7 @@ const AboutSection = () => {
 
             <Card className="border-l-4 border-l-primary shadow-soft hover:shadow-medium transition-shadow">
               <CardContent className="p-6">
-                <div className="flex items-start gap-4">
+                <div className="flex flex-wrap md:flex-nowrap items-start gap-4">
                   <div className="p-3 rounded-lg bg-primary/10">
                     <Rocket className="w-6 h-6 text-primary" />
                   </div>

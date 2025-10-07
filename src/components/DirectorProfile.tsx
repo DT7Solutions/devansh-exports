@@ -13,11 +13,7 @@ const DirectorProfile = () => {
             <div className="relative">
               <div className="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-primary rounded-tl-3xl opacity-50" />
               <div className="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-primary rounded-br-3xl opacity-50" />
-              <img
-                src={directorImage}
-                alt="Chandolu Manikanta - Director"
-                className="relative w-80 h-80 rounded-2xl object-cover border-4 border-primary shadow-strong"
-              />
+              <img src={directorImage} alt="Chandolu Manikanta - Director" className="relative rounded-2xl object-cover border-4 border-primary shadow-strong" />
             </div>
           </div>
 

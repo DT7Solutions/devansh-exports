@@ -92,18 +92,18 @@ const ContactSection = () => {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-3 gap-8">
+      <div className="grid lg:grid-cols-3 gap-12 items-center">
         {/* Contact Information */}
-        <div className="space-y-6 animate-slide-up">
-          <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
+        <div className="space-y-8 animate-slide-up">
+          <div className="flex items-start gap-4 p-8 rounded-lg border border-border hover:border-primary/50 transition-colors">
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <MapPin className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Address</h3>
-              <p className="text-sm text-muted-foreground"> <a href="https://maps.app.goo.gl/ZfyRgdWy2JPvAe9L7" className="hover:underline" target="_blank" rel="noopener noreferrer"> Devansh Exports, 29-295, ground floor, kothapet, vinukonda. palnadu dist. AP - 522647. </a> </p>
+              <p className="text-sm text-muted-foreground"> <a href="https://maps.app.goo.gl/ZfyRgdWy2JPvAe9L7" className="hover:underline" target="_blank" rel="noopener noreferrer"> Devansh Exports, 29-295, kothapet, vinukonda. palnadu dist. AP - 522647. </a> </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
+          <div className="flex items-start gap-4 p-8 rounded-lg border border-border hover:border-primary/50 transition-colors">
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Phone className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Phone</h3>
@@ -111,15 +111,15 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
+          <div className="flex items-start gap-4 p-8 rounded-lg border border-border hover:border-primary/50 transition-colors">
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Mail className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Email</h3>
-              <p className="text-sm text-muted-foreground"> <a href="mailto:sales@devanshexports.com" className="hover:underline"> Sales@devanshexports.com </a> </p>
+              <p className="text-sm text-muted-foreground"> <a href="mailto:devanshexports555@gmail.com" className="hover:underline"> devanshexports555@gmail.com </a> </p>
             </div>
           </div>
 
-          <div className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 transition-colors">
+          <div className="flex items-start gap-4 p-8 rounded-lg border border-border hover:border-primary/50 transition-colors">
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Clock className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Business Hours</h3>

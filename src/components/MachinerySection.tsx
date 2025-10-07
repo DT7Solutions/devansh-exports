@@ -70,10 +70,7 @@ const MachinerySection = () => {
         {/* Features Column */}
         <div className="space-y-6 animate-slide-up">
           {features.map((feature, index) => (
-            <div
-              key={index}
-              className="flex items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 hover:shadow-soft transition-all"
-            >
+            <div key={index} className="flex flex-wrap md:flex-nowrap items-start gap-4 p-6 rounded-lg border border-border hover:border-primary/50 hover:shadow-soft transition-all" >
               <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0">
                 <feature.icon className="w-6 h-6 text-primary" />
               </div>

@@ -81,15 +81,15 @@ const ProductShowcase = () => {
   const [selectedProduct, setSelectedProduct] = useState<string | null>(null);
 
   const ProductCard = ({ name, image }: { name: string; image: string }) => (
-    <div className="group relative overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-all duration-300 h-64 cursor-pointer">
+    <div className="group relative overflow-hidden rounded-lg shadow-soft hover:shadow-strong transition-all duration-300 h-32 sm:h-48 lg:h-64 cursor-pointer">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-gradient-to-br from-muted via-background to-muted/50 group-hover:scale-105 transition-transform duration-300 bg-cover bg-center"
         style={{ backgroundImage: `url(${image})` }}
       />
       {/* Product Name Overlay */}
-      <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-secondary/90 to-transparent">
-        <h3 className="font-display text-lg font-bold text-white">{name}</h3>
+      <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-secondary/90 to-transparent">
+        <h3 className="font-display text-xs md:text-sm lg:text-lg font-bold text-white">{name}</h3>
       </div>
     </div>
   );
@@ -107,13 +107,13 @@ const ProductShowcase = () => {
         </div>
 
         <Tabs defaultValue="granite" className="w-full animate-slide-up">
-          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-12 gap-2">
             <TabsTrigger value="granite">Granite Collection</TabsTrigger>
             <TabsTrigger value="quartz">Quartz Collection</TabsTrigger>
           </TabsList>
 
           <TabsContent value="granite" className="animate-fade-in">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {graniteProducts.map(([name, image]) => (
                 <ProductCard key={name} name={name} image={image} />
               ))}
@@ -121,7 +121,7 @@ const ProductShowcase = () => {
           </TabsContent>
 
           <TabsContent value="quartz" className="animate-fade-in">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
               {quartzProducts.map(([name, image]) => (
                 <ProductCard key={name} name={name} image={image} />
               ))}
