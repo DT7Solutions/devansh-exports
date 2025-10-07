@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import heroImage1 from "@/assets/hero-1.jpg";
 import heroImage2 from "@/assets/hero-2.jpg";
-import heroImage3 from "@/assets/hero-3.jpg";
+import heroImage3 from "@/assets/hero-3.png";
 
 const slides = [
   {
