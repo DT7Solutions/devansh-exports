@@ -68,7 +68,7 @@ const Footer = () => {
               <a href="https://www.instagram.com/devanshexports/" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-gradient-to-tr from-[#FCAF45] via-[#E1306C] to-[#833AB4] hover:opacity-90 transition-opacity" aria-label="Instagram" >
                 <Instagram className="w-5 h-5 text-white" />
               </a>
-              <a href="https://wa.me/917799884427" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#25D366] hover:bg-[#1ebe57] transition-colors inline-block no-underline" aria-label="WhatsApp" >
+              <a href="https://wa.me/917799884427?text=Hello%20Devansh%20Exports!" target="_blank" rel="noopener noreferrer" className="p-2 rounded-lg bg-[#25D366] hover:bg-[#1ebe57] transition-colors inline-block no-underline" aria-label="WhatsApp" >
                 <WhatsAppIcon className="w-5 h-5 text-white" />
               </a>
             </div>
