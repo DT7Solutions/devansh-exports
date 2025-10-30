@@ -4,6 +4,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Phone, Mail, Clock, CheckCircle2 } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -20,60 +22,91 @@ const ContactSection = () => {
   const [errors, setErrors] = useState<Record<string, string>>({});
 
   const validateForm = () => {
-    const newErrors: Record<string, string> = {};
+  const newErrors: Record<string, string> = {};
 
-    if (!formData.name.trim()) newErrors.name = "Name is required";
-    if (!formData.email.trim()) {
-      newErrors.email = "Email is required";
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Invalid email format";
-    }
-    if (!formData.phone.trim()) {
-      newErrors.phone = "Phone number is required";
-    } else if (!/^\+?[\d\s-]{10,}$/.test(formData.phone)) {
-      newErrors.phone = "Invalid phone format";
-    }
-    if (!formData.message.trim()) newErrors.message = "Message is required";
+  if (!formData.name.trim()) newErrors.name = "Please fill your name";
+  if (!formData.email.trim()) {
+    newErrors.email = "Please fill your email";
+  } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    newErrors.email = "Invalid email format";
+  }
+  if (!formData.phone.trim()) {
+    newErrors.phone = "Please fill your phone number";
+  } else if (!/^\+?[\d\s-]{10,}$/.test(formData.phone)) {
+    newErrors.phone = "Invalid phone format";
+  }
+  if (!formData.company.trim()) newErrors.company = "Please fill your company/organization";
+  if (!formData.productInterest.trim()) newErrors.productInterest = "Please select a product interest";
+  if (!formData.message.trim()) newErrors.message = "Please fill your message";
 
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0; // returns true only if no errors
+};
+
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!validateForm()) {
-      toast({
-        title: "Validation Error",
-        description: "Please fix the errors in the form",
-        variant: "destructive",
-      });
-      return;
-    }
+  // Validate all fields first
+  if (!validateForm()) {
+    toast({
+      title: "Validation Error",
+      description: "Please fill all the required fields",
+      variant: "destructive",
+    });
+    return; // stop submission if any field is invalid
+  }
 
-    setIsSubmitting(true);
+  setIsSubmitting(true);
 
-    // Simulate submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setShowSuccess(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        company: "",
-        productInterest: "",
-        message: "",
-      });
+  try {
+    // Send email using EmailJS
+    await emailjs.send(
+      "service_2pgj0fi",       // Service ID
+      "template_dr8ispb",      // Template ID
+      {
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        company: formData.company,
+        productInterest: formData.productInterest,
+        message: formData.message,
+      },
+      "BaJGqRi5rSULEB2G5"     // Public Key
+    );
 
-      toast({
-        title: "Success!",
-        description: "Your enquiry has been received. We'll contact you within 24-48 hours.",
-      });
+    // Show success message
+    setShowSuccess(true);
 
-      setTimeout(() => setShowSuccess(false), 5000);
-    }, 1500);
-  };
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      company: "",
+      productInterest: "",
+      message: "",
+    });
+
+    toast({
+      title: "Success!",
+      description: "Your enquiry has been received. We'll contact you within 24-48 hours.",
+    });
+
+    setTimeout(() => setShowSuccess(false), 5000);
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    toast({
+      title: "Error",
+      description: "Failed to send enquiry. Please try again later.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -115,7 +148,7 @@ const ContactSection = () => {
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Mail className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Email</h3>
-              <p className="text-sm text-muted-foreground"> <a href="mailto:devanshexports555@gmail.com" className="hover:underline"> devanshexports555@gmail.com </a> </p>
+              <p className="text-sm text-muted-foreground"> <a href="mailto:devanshexports14@gmail.com" className="hover:underline"> devanshexports14@gmail.com </a> </p>
             </div>
           </div>
 
@@ -133,12 +166,12 @@ const ContactSection = () => {
           <div className="bg-white rounded-lg border border-border shadow-soft p-8">
             <h3 className="font-display text-2xl font-bold text-secondary mb-2">Send Your Enquiry</h3>
             <p className="text-sm text-muted-foreground mb-6"> Fill out the form below and we'll get back to you as soon as possible. </p>
-            {showSuccess && (
+            {/* {showSuccess && (
               <div className="mb-6 p-4 bg-primary/10 border border-primary rounded-lg flex items-center gap-3">
                 <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0" />
                 <p className="text-sm text-secondary"> Thank you! Your enquiry has been received. We'll contact you within 24-48 hours. </p>
               </div>
-            )}
+            )} */}
 
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
