@@ -156,7 +156,7 @@ const ContactSection = () => {
             <div className="p-3 rounded-lg bg-primary/10 flex-shrink-0"> <Clock className="w-5 h-5 text-primary" /> </div>
             <div>
               <h3 className="font-semibold text-secondary mb-1">Business Hours</h3>
-              <p className="text-sm text-muted-foreground"> Monday - Friday: 10:00 AM - 7:00 PM <br /> Saturday & Sunday: Closed </p>
+              <p className="text-sm text-muted-foreground"> Monday - Sunday: 10:00 AM - 7:00 PM </p>
             </div>
           </div>
         </div>
